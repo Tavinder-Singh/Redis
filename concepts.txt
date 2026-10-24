@@ -1,0 +1,11 @@
+1. TCP/IP and Socket Programming
+2. Concurrency and Multithreading
+3. Mutex and Sync..
+4. Data Structures -> Hash Tables, Vectors 
+5. Parsing and REPS protocol
+6. File I/O Persistence IDB (stance)
+7. Signal Handling
+8. Command Processing and Formatting
+9. SIngleton Pattern
+10. Bitwise Operators '|+'
+11. std:: (c++ standard libraries)
