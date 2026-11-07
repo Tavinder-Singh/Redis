@@ -1,8 +1,9 @@
-#include <include/RedisCommandHandler.h>
+#include "../include/RedisCommandHandler.h"
 
 #include <vector>
 #include <sstream>
 #include <algorithm>
+#include <iostream> //debug
 
 // RESP parser:
 // *2\r\n$4\r\n\PING\r\n\n$4\r\nTEST\r\n
@@ -59,6 +60,9 @@ std::string RedisCommandHandler::processCommand(const std::string& commandLine){
     // Use RESP perser
     auto tokens = parseRespCommand(commandLine);
     if(tokens.empty()) return"-Error : empty command\r\n";
+    for(auto& t : tokens){
+        std::cout<<t<<"\n";
+    }
     
     std::string cmd = tokens[0];
     std::transform(cmd.begin(), cmd.end(), cmd.begin(), ::toupper);
