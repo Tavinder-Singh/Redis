@@ -11,6 +11,19 @@ public:
     // Get the singleton instance
     static RedisDatabase& getInstance();
 
+    // Comman Commands
+    bool flushAll();
+
+    // Key/Value Operations
+    bool set(const std::string& key, const std::string& value);
+    bool get(const std::string& key, const std::string& value);
+    std::vector<std::string> keys();
+    std::string type(const std::string& key);
+    bool del(const std::string& key);
+    bool expire(const std::string& key, const std::string& seconds);
+    bool rename(const std::string& oldKey, const std::string& newKey);
+
+
     // Persistance: Dump / load the database from file
     bool dump(const std::string& fileName);
     bool load(const std::string& fileName);
