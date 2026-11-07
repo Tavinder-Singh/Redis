@@ -60,6 +60,9 @@ std::string RedisCommandHandler::processCommand(const std::string& commandLine){
     // Use RESP perser
     auto tokens = parseRespCommand(commandLine);
     if(tokens.empty()) return"-Error : empty command\r\n";
+
+    std::cout<< commandLine << "\n";
+
     for(auto& t : tokens){
         std::cout<<t<<"\n";
     }
