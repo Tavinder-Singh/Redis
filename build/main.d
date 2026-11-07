@@ -1,2 +1,4 @@
-build/main.o: src/main.cpp src/../include/RedisServer.h
+build/main.o: src/main.cpp src/../include/RedisServer.h \
+ src/../include/RedisDatabase.h
 src/../include/RedisServer.h:
+src/../include/RedisDatabase.h:
