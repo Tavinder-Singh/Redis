@@ -5,6 +5,7 @@
 #include <mutex>
 #include <unordered_map>
 #include <vector>
+#include <chrono>
 
 class RedisDatabase{
 public:
@@ -15,12 +16,12 @@ public:
     bool flushAll();
 
     // Key/Value Operations
-    bool set(const std::string& key, const std::string& value);
-    bool get(const std::string& key, const std::string& value);
+    void set(const std::string& key, const std::string& value);
+    bool get(const std::string& key, std::string& value);
     std::vector<std::string> keys();
     std::string type(const std::string& key);
     bool del(const std::string& key);
-    bool expire(const std::string& key, const std::string& seconds);
+    bool expire(const std::string& key, int seconds);
     bool rename(const std::string& oldKey, const std::string& newKey);
 
 
@@ -41,8 +42,8 @@ private:
     std::unordered_map<std::string, std::vector<std::string>> list_store;
     std::unordered_map<std::string, std::unordered_map<std::string, std::string>> hash_store;
 
+    std::unordered_map<std::string, std::chrono::steady_clock::time_point> expiry_map;
     
-
 };
 
 #endif
