@@ -1,5 +1,5 @@
-K weather sunny
-K name Mike
-L fruits apple banana orange
+K Name Henry
+K city Berlin
 L colors red green blue
-H user:200 name:Harry age:30 email:harry020@gmail.com
+L fruits apple banana orange
+H user:200 email:harry020@gmail.com age:30 name:Harry
