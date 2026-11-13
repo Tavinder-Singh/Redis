@@ -1,5 +1,5 @@
-K Name Henry
+K name Henry
 K city Berlin
-L colors red green blue
 L fruits apple banana orange
-H user:200 email:harry020@gmail.com age:30 name:Harry
+L colors red green blue
+H user:200 name:Harry age:30 email:harry020@gmail.com
