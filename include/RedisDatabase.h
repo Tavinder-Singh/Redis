@@ -26,8 +26,8 @@ public:
 
     // List Operations
     ssize_t llen(const std::string& key);
-    void lpush(const std::string key,const std::string value); 
-    void rpush(const std::string key, const std::string value);
+    void lpush(const std::string& key,const std::string& value); 
+    void rpush(const std::string& key, const std::string& value);
     bool lpop(const std::string& key, std::string& value); 
     bool rpop(const std::string& key, std::string& value); 
     int lrem(const std::string& key, int count,const std::string& value);

@@ -79,9 +79,8 @@ bool RedisDatabase::expire(const std::string& key, int seconds){
         return false;
     expiry_map[key] = std::chrono::steady_clock::now() + std::chrono::seconds(seconds);
     return true;
-    
-
 }
+
 bool RedisDatabase::rename(const std::string& oldKey, const std::string& newKey){
     std::lock_guard<std::mutex> lock(db_mutex);
     bool found = false;
@@ -122,12 +121,12 @@ ssize_t RedisDatabase::llen(const std::string& key) {
         return 0;
 }
 
-void RedisDatabase::lpush(const std::string key,const std::string value) {
+void RedisDatabase::lpush(const std::string& key,const std::string& value) {
     std::lock_guard<std::mutex> lock(db_mutex);
     list_store[key].insert(list_store[key].begin(), value);
 }
 
-void RedisDatabase::rpush(const std::string key, const std::string value) {
+void RedisDatabase::rpush(const std::string& key, const std::string& value) {
     std::lock_guard<std::mutex> lock(db_mutex);
     list_store[key].push_back(value);
 }
